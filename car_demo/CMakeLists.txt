@@ -1,10 +1,14 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(car_demo)
 
+set(CMAKE_CXX_STANDARD 14)
+
 set (PRIUSCUP_MAJOR_VERSION 0)
 set (PRIUSCUP_MINOR_VERSION 1)
 set (PRIUSCUP_PATCH_VERSION 0)
 set (PRIUSCUP_VERSION_FULL ${PRIUSCUP_MAJOR_VERSION}.${PRIUSCUP_MINOR_VERSION}.${PRIUSCUP_PATCH_VERSION})
+
+add_compile_options(-std=c++11)
 
 find_package(catkin REQUIRED COMPONENTS
   gazebo_ros
@@ -13,8 +17,8 @@ find_package(catkin REQUIRED COMPONENTS
 )
 
 #find_package(gazebo 8 REQUIRED)
-find_package(gazebo 9 REQUIRED)
-find_package(ignition-msgs0 REQUIRED)
+find_package(gazebo REQUIRED)
+find_package(ignition-msgs8 REQUIRED)
 
 catkin_package(
  # INCLUDE_DIRS include
